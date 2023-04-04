@@ -61,7 +61,7 @@ class GenerateImageMod(loader.Module):
         image_path = os.path.join(os.getcwd(), 'dall-e-image.png')
         image.save(image_path)
 
-        await message.client.send_file(message.to_id, image_bytes.getvalue(), caption="Generated image")
+        await message.client.send_file(message.chat_id, image_path)
 
 
     async def apicmd(self, message):
